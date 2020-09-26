@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Analyze Message</h2>
+
+<form action="{{ url_for('predict') }}", method="POST">
+  <label for="msg">Analyze Message:</label><br>
+  <input type="text" id="msg" name="msg" value=""><br>
+  <input type="submit" value="Submit">
+</form>
+
+{% if var == "1" %}
+  <h2>HAM Message</h2>
+{% endif %}
+{% if var == "0" %}
+  <h2>SPAM Message</h2>
+{% endif %}
+</body>
+</html>
