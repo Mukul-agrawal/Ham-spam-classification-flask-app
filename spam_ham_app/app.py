@@ -27,12 +27,10 @@ def predict():
         model = pickle.load(f)
     prediction = model.predict_proba([msg])
     result = list(prediction[0]).index(max(list(prediction[0])))
-    print("----------------->>>>>>>>>>>",result)
     if result == 0:
         var = '1'
     else:
         var = '0'
-    print("***************************",var)
     return render_template("index.html", var=var)
 
 if __name__ == '__main__':
